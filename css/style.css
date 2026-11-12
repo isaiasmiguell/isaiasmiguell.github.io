@@ -237,16 +237,17 @@ a:focus-visible {
   color: var(--navy-muted);
 }
 
-.dial {
-  flex: 1 1 280px;
+.hero-avatar {
+  flex: 1 1 320px;
   display: flex;
   justify-content: center;
 }
 
-.dial svg {
-  width: 300px;
-  max-width: 100%;
+.hero-avatar img {
+  width: 100%;
+  max-width: 440px;
   height: auto;
+  display: block;
 }
 
 /* ---------- Secções ---------- */
@@ -553,7 +554,7 @@ a:focus-visible {
   .hero { padding: 48px 0 80px; }
   .section, .section--sand { padding: 80px 0; }
   .contact { padding-top: 80px; }
-  .dial svg { width: 220px; }
+  .hero-avatar img { max-width: 300px; }
   .timeline-label { flex-basis: 100%; padding-top: 0; }
 }
 
