@@ -18,6 +18,7 @@
   --navy-line: #3A4552;   /* linhas sobre o azul-noite */
   --navy-border: #4A5562; /* contornos de botões sobre o azul-noite */
   --navy-muted: #D9D2C4;  /* texto secundário sobre o azul-noite */
+  --on-brass-line: rgba(26, 33, 41, 0.35); /* linhas e contornos sobre o latão */
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -54,7 +55,7 @@ a { color: var(--burgundy); }
 a:hover { color: var(--navy); }
 
 a:focus-visible {
-  outline: 2px solid var(--brass);
+  outline: 2px solid var(--navy);
   outline-offset: 3px;
 }
 
@@ -66,8 +67,8 @@ a:focus-visible {
 
 /* ---------- Navegação ---------- */
 .site-header {
-  background: var(--navy);
-  color: var(--cream);
+  background: var(--brass);
+  color: var(--navy);
 }
 
 .nav {
@@ -84,17 +85,17 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--cream);
+  color: var(--navy);
   text-decoration: none;
 }
 
-.brand:hover { color: var(--cream); }
+.brand:hover { color: var(--navy); }
 
 .brand-mark {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid var(--brass);
+  border: 1px solid var(--navy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,7 +119,7 @@ a:focus-visible {
 }
 
 .nav-links a {
-  color: var(--cream);
+  color: var(--navy);
   text-decoration: none;
   padding: 12px 0;
   border-bottom: 1px solid transparent;
@@ -126,8 +127,8 @@ a:focus-visible {
 }
 
 .nav-links a:hover {
-  color: var(--cream);
-  border-bottom-color: var(--brass);
+  color: var(--navy);
+  border-bottom-color: var(--navy);
 }
 
 /* ---------- Rótulos ---------- */
@@ -139,13 +140,13 @@ a:focus-visible {
   color: var(--burgundy);
 }
 
-.eyebrow--brass { color: var(--brass); }
+.eyebrow--brass { color: var(--navy); }
 
 .eyebrow-rule {
   display: inline-block;
   width: 40px;
   height: 1px;
-  background: var(--brass);
+  background: var(--navy);
 }
 
 .brass-rule {
@@ -188,19 +189,30 @@ a:focus-visible {
 }
 
 .btn--outline {
-  border: 1px solid var(--navy-border);
-  color: var(--cream);
+  border: 1px solid var(--on-brass-line);
+  color: var(--navy);
 }
 
 .btn--outline:hover {
-  border-color: var(--brass);
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.btn--dark {
+  background: var(--navy);
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.btn--dark:hover {
+  background: #2B3540;
   color: var(--cream);
 }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: var(--navy);
-  color: var(--cream);
+  background: var(--brass);
+  color: var(--navy);
   padding: 72px 0 112px;
 }
 
@@ -234,7 +246,7 @@ a:focus-visible {
   max-width: 560px;
   font-size: 18px;
   line-height: 1.65;
-  color: var(--navy-muted);
+  color: var(--navy);
 }
 
 .hero-avatar {
@@ -368,9 +380,9 @@ a:focus-visible {
 }
 
 .tech-card--dark {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: var(--cream);
+  background: var(--brass);
+  border-color: var(--brass);
+  color: var(--navy);
 }
 
 .tag {
@@ -378,7 +390,7 @@ a:focus-visible {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--brass);
+  color: var(--navy);
 }
 
 .dot-list,
@@ -411,7 +423,7 @@ a:focus-visible {
   content: "";
   width: 14px;
   height: 1px;
-  background: var(--brass);
+  background: var(--navy);
   flex-shrink: 0;
 }
 
@@ -437,11 +449,11 @@ a:focus-visible {
 
 .project-media {
   height: 200px;
-  background: var(--navy);
+  background: var(--brass);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8A93A0;
+  color: var(--navy);
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -511,8 +523,8 @@ a:focus-visible {
 
 /* ---------- Contacto / rodapé ---------- */
 .contact {
-  background: var(--navy);
-  color: var(--cream);
+  background: var(--brass);
+  color: var(--navy);
   padding: 112px 0 56px;
 }
 
@@ -527,13 +539,13 @@ a:focus-visible {
 .footer-bar {
   margin-top: 104px;
   padding-top: 28px;
-  border-top: 1px solid #343E4A;
+  border-top: 1px solid var(--on-brass-line);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
   font-size: 13px;
-  color: #9AA3AE;
+  color: var(--navy);
 }
 
 .footer-status {
