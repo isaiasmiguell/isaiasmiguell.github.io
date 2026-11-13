@@ -561,6 +561,43 @@ a:focus-visible {
   background: var(--burgundy);
 }
 
+/* ---------- Ecrã inicial ---------- */
+.splash-page { background: var(--cream); }
+
+.splash {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  padding: 24px;
+}
+
+.splash-title { margin: 0; }
+
+.splash-logo {
+  display: block;
+  width: min(360px, 72vw);
+  height: auto;
+  animation: splash-in 1.2s ease-out both;
+}
+
+.splash-btn {
+  min-width: 148px;
+  justify-content: center;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 13px;
+  animation: splash-in 1.2s ease-out 0.5s both;
+}
+
+@keyframes splash-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
 /* ---------- Telemóvel ---------- */
 @media (max-width: 600px) {
   .hero { padding: 48px 0 80px; }
@@ -573,5 +610,5 @@ a:focus-visible {
 /* Respeita quem prefere menos movimento */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  * { transition: none !important; }
+  * { transition: none !important; animation: none !important; }
 }
