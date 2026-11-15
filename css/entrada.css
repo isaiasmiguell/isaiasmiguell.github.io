@@ -1,0 +1,189 @@
+/* =========================================================
+   Isaías Miguel — Página de entrada
+   Paleta oficial: Obsidiana #171918 · Marfim #F1EEE7
+                   Bronze Envelhecido #A68A61 · Travertino #D5C9B5
+   ========================================================= */
+
+:root {
+  --obsidiana: #171918;
+  --marfim: #F1EEE7;
+  --bronze: #A68A61;
+  --travertino: #D5C9B5;
+
+  --fonte-institucional: 'Cormorant Garamond', Georgia, serif;
+  --fonte-analitica: 'Jost', system-ui, sans-serif;
+
+  --duracao-monograma: 5s;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body.entrada {
+  margin: 0;
+  background: var(--obsidiana);
+  color: var(--marfim);
+  font-family: var(--fonte-analitica);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Fundo: mistura desfocada da paleta ---------- */
+.fundo {
+  position: fixed;
+  inset: -25%;
+  filter: blur(90px);
+  z-index: 0;
+}
+
+.mancha {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+  animation: deriva 26s ease-in-out infinite alternate;
+}
+
+.mancha--bronze      { width: 55vmax; height: 55vmax; left: 2%;  top: 8%;  background: var(--bronze); }
+.mancha--travertino  { width: 48vmax; height: 48vmax; right: 0;  top: 0;   background: var(--travertino); animation-duration: 32s; animation-delay: -8s; }
+.mancha--marfim      { width: 34vmax; height: 34vmax; left: 38%; bottom: 0; background: var(--marfim); animation-duration: 29s; animation-delay: -14s; }
+.mancha--obsidiana   { width: 50vmax; height: 50vmax; left: 30%; top: 25%; background: var(--obsidiana); animation-duration: 35s; animation-delay: -4s; }
+.mancha--bronze-2    { width: 40vmax; height: 40vmax; right: 6%; bottom: 4%; background: var(--bronze); animation-duration: 38s; animation-delay: -20s; }
+
+@keyframes deriva {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(6vw, -4vh) scale(1.08); }
+  100% { transform: translate(-5vw, 5vh) scale(0.94); }
+}
+
+/* Véu: escurece o conjunto e mais ainda no centro, para destacar o monograma */
+.veu {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 42% 48% at 50% 46%, rgba(23, 25, 24, 0.72), rgba(23, 25, 24, 0) 100%),
+    rgba(23, 25, 24, 0.62);
+}
+
+/* ---------- Palco ---------- */
+.palco {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 7vh, 72px);
+  padding: 24px;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* ---------- Monograma: desenha-se e preenche-se em 5 s ---------- */
+.monograma {
+  margin: 0;
+  width: auto;
+  height: clamp(180px, 42vh, 380px);
+  aspect-ratio: 1960 / 2267;
+  filter: drop-shadow(0 0 40px rgba(166, 138, 97, 0));
+  animation: brilho var(--duracao-monograma) ease-out forwards;
+}
+
+.monograma svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.monograma-traco {
+  fill: none;
+  stroke: var(--bronze);
+  stroke-width: 7;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: desenhar var(--duracao-monograma) cubic-bezier(.45, .05, .25, 1) forwards;
+}
+
+.monograma-corpo {
+  fill: var(--bronze);
+  opacity: 0;
+  animation: preencher var(--duracao-monograma) ease-in-out forwards;
+}
+
+@keyframes desenhar {
+  0%   { stroke-dashoffset: 1; opacity: 1; }
+  68%  { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes preencher {
+  0%, 52% { opacity: 0; }
+  100%    { opacity: 1; }
+}
+
+@keyframes brilho {
+  0%, 60% { filter: drop-shadow(0 0 40px rgba(166, 138, 97, 0)); }
+  100%    { filter: drop-shadow(0 0 48px rgba(166, 138, 97, 0.28)); }
+}
+
+/* ---------- Botão Imergir: aparece quando o monograma termina ---------- */
+.imergir {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  min-width: 190px;
+  padding: 0 40px;
+  border: 1px solid rgba(166, 138, 97, 0.7);
+  color: var(--marfim);
+  font-family: var(--fonte-analitica);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-indent: 0.38em; /* compensa o espaçamento da última letra */
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(23, 25, 24, 0.35);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: surgir 0.9s ease-out var(--duracao-monograma) forwards;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.imergir:hover {
+  background: var(--bronze);
+  border-color: var(--bronze);
+  color: var(--obsidiana);
+}
+
+.imergir:focus-visible {
+  outline: 2px solid var(--marfim);
+  outline-offset: 4px;
+}
+
+@keyframes surgir {
+  to { opacity: 1; transform: none; }
+}
+
+/* Saída: o palco recua e escurece antes de abrir a página principal */
+body.a-sair .palco {
+  opacity: 0;
+  transform: scale(1.06);
+}
+
+/* ---------- Movimento reduzido: tudo visível de imediato ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .mancha,
+  .monograma,
+  .monograma-traco,
+  .monograma-corpo,
+  .imergir { animation: none; }
+  .monograma-traco { opacity: 0; }
+  .monograma-corpo { opacity: 1; }
+  .imergir { opacity: 1; transform: none; }
+}
