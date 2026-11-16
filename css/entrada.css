@@ -1,14 +1,14 @@
 /* =========================================================
    Isaías Miguel — Página de entrada
-   Paleta oficial: Obsidiana #171918 · Marfim #F1EEE7
-                   Bronze Envelhecido #A68A61 · Travertino #D5C9B5
+   Paleta oficial: Azul Meia-Noite #0F1722 · Creme Alabastro #F8F6F0
+                   Ouro Champanhe #C5A059 · Verde Inglês #1B362D
    ========================================================= */
 
 :root {
-  --obsidiana: #171918;
-  --marfim: #F1EEE7;
-  --bronze: #A68A61;
-  --travertino: #D5C9B5;
+  --azul: #0F1722;
+  --creme: #F8F6F0;
+  --ouro: #C5A059;
+  --verde: #1B362D;
 
   --fonte-institucional: 'Cormorant Garamond', Georgia, serif;
   --fonte-analitica: 'Jost', system-ui, sans-serif;
@@ -22,8 +22,8 @@ html, body { height: 100%; }
 
 body.entrada {
   margin: 0;
-  background: var(--obsidiana);
-  color: var(--marfim);
+  background: var(--azul);
+  color: var(--creme);
   font-family: var(--fonte-analitica);
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
@@ -44,11 +44,11 @@ body.entrada {
   animation: deriva 26s ease-in-out infinite alternate;
 }
 
-.mancha--bronze      { width: 55vmax; height: 55vmax; left: 2%;  top: 8%;  background: var(--bronze); }
-.mancha--travertino  { width: 48vmax; height: 48vmax; right: 0;  top: 0;   background: var(--travertino); animation-duration: 32s; animation-delay: -8s; }
-.mancha--marfim      { width: 34vmax; height: 34vmax; left: 38%; bottom: 0; background: var(--marfim); animation-duration: 29s; animation-delay: -14s; }
-.mancha--obsidiana   { width: 50vmax; height: 50vmax; left: 30%; top: 25%; background: var(--obsidiana); animation-duration: 35s; animation-delay: -4s; }
-.mancha--bronze-2    { width: 40vmax; height: 40vmax; right: 6%; bottom: 4%; background: var(--bronze); animation-duration: 38s; animation-delay: -20s; }
+.mancha--ouro    { width: 52vmax; height: 52vmax; left: 2%;  top: 8%;  background: var(--ouro); }
+.mancha--verde   { width: 50vmax; height: 50vmax; right: 0;  top: 0;   background: var(--verde); animation-duration: 32s; animation-delay: -8s; }
+.mancha--creme   { width: 32vmax; height: 32vmax; left: 38%; bottom: 0; background: var(--creme); animation-duration: 29s; animation-delay: -14s; }
+.mancha--azul    { width: 50vmax; height: 50vmax; left: 30%; top: 25%; background: var(--azul); animation-duration: 35s; animation-delay: -4s; }
+.mancha--ouro-2  { width: 38vmax; height: 38vmax; right: 6%; bottom: 4%; background: var(--ouro); animation-duration: 38s; animation-delay: -20s; }
 
 @keyframes deriva {
   0%   { transform: translate(0, 0) scale(1); }
@@ -62,8 +62,8 @@ body.entrada {
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(ellipse 42% 48% at 50% 46%, rgba(23, 25, 24, 0.72), rgba(23, 25, 24, 0) 100%),
-    rgba(23, 25, 24, 0.62);
+    radial-gradient(ellipse 42% 48% at 50% 46%, rgba(15, 23, 34, 0.72), rgba(15, 23, 34, 0) 100%),
+    rgba(15, 23, 34, 0.62);
 }
 
 /* ---------- Palco ---------- */
@@ -87,7 +87,7 @@ body.entrada {
   width: auto;
   height: clamp(180px, 42vh, 380px);
   aspect-ratio: 1960 / 2267;
-  filter: drop-shadow(0 0 40px rgba(166, 138, 97, 0));
+  filter: drop-shadow(0 0 40px rgba(197, 160, 89, 0));
   animation: brilho var(--duracao-monograma) ease-out forwards;
 }
 
@@ -100,7 +100,7 @@ body.entrada {
 
 .monograma-traco {
   fill: none;
-  stroke: var(--bronze);
+  stroke: var(--ouro);
   stroke-width: 7;
   stroke-linejoin: round;
   stroke-dasharray: 1;
@@ -109,7 +109,7 @@ body.entrada {
 }
 
 .monograma-corpo {
-  fill: var(--bronze);
+  fill: var(--ouro);
   opacity: 0;
   animation: preencher var(--duracao-monograma) ease-in-out forwards;
 }
@@ -126,8 +126,8 @@ body.entrada {
 }
 
 @keyframes brilho {
-  0%, 60% { filter: drop-shadow(0 0 40px rgba(166, 138, 97, 0)); }
-  100%    { filter: drop-shadow(0 0 48px rgba(166, 138, 97, 0.28)); }
+  0%, 60% { filter: drop-shadow(0 0 40px rgba(197, 160, 89, 0)); }
+  100%    { filter: drop-shadow(0 0 48px rgba(197, 160, 89, 0.28)); }
 }
 
 /* ---------- Botão Imergir: aparece quando o monograma termina ---------- */
@@ -138,8 +138,8 @@ body.entrada {
   min-height: 52px;
   min-width: 190px;
   padding: 0 40px;
-  border: 1px solid rgba(166, 138, 97, 0.7);
-  color: var(--marfim);
+  border: 1px solid rgba(197, 160, 89, 0.7);
+  color: var(--creme);
   font-family: var(--fonte-analitica);
   font-size: 13px;
   font-weight: 500;
@@ -147,7 +147,7 @@ body.entrada {
   text-indent: 0.38em; /* compensa o espaçamento da última letra */
   text-transform: uppercase;
   text-decoration: none;
-  background: rgba(23, 25, 24, 0.35);
+  background: rgba(15, 23, 34, 0.35);
   backdrop-filter: blur(6px);
   opacity: 0;
   transform: translateY(10px);
@@ -156,13 +156,13 @@ body.entrada {
 }
 
 .imergir:hover {
-  background: var(--bronze);
-  border-color: var(--bronze);
-  color: var(--obsidiana);
+  background: var(--ouro);
+  border-color: var(--ouro);
+  color: var(--azul);
 }
 
 .imergir:focus-visible {
-  outline: 2px solid var(--marfim);
+  outline: 2px solid var(--creme);
   outline-offset: 4px;
 }
 
